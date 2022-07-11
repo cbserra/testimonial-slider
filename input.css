@@ -11,8 +11,7 @@
   }
 
   html {
-    @apply text-base;
-    overflow: hidden;
+    @apply text-base overflow-hidden;
   }
 
   * {
@@ -57,31 +56,20 @@
   }
 
   .photo-container {
-    @apply relative flex flex-col items-center justify-center bg-pattern-bg bg-contain bg-no-repeat bg-center px-12;
-    @apply w-full h-full lg:w-1/2 lg:h-1/2;
-    @apply lg:right-32 lg:p-32;
+    @apply relative flex flex-col items-center justify-center bg-pattern-bg bg-contain bg-no-repeat bg-center px-12  w-full h-full;
+    /* Desktop */
+    @apply lg:w-1/2 lg:h-1/2 lg:right-32 lg:p-32;
   }
 
   .photo-container > img {
     @apply relative rounded shadow-2xl;
-    /* @apply w-[254px] h-[254px]; */
-    /* @apply min-w-[254px] max-w-[540px]; */
-    /* @apply lg:w-[540px] lg:h-[540px]; */
-    /* box-shadow: 0px 15px 20px 5px rgba(36, 36, 113, 0.2); */
-    /* width: clamp(25.4rem, min(calc(2.5vw + 25.4rem), 50rem), 50rem); */
-    /* height: clamp(25.4rem, min(calc(2.5vw + 25.4rem), 50rem), 50rem); */
   }
 
   .nav-container {
     @apply relative w-[80px] h-[40px] flex items-center justify-around z-10 bottom-10;
     @apply bg-white shadow-xl rounded-[28px];
-    /* -translate-y-20 */
-    /* background: #ffffff;
-    box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
-    border-radius: 28px; */
-
+    /* Desktop */
     @apply lg:left-48 lg:self-start;
-    /* @apply flex flex-col items-center justify-center m-10; */
   }
 
   .nav-container > span {
@@ -90,23 +78,15 @@
 
   .quote-container {
     @apply flex flex-col items-center justify-between bg-pattern-quotes bg-no-repeat bg-top bg-[length:60px_50px] p-6 gap-8;
-    /* background-size: 60px 50px; */
+    /* Desktop */
     @apply lg:absolute lg:w-[50%] lg:z-50 lg:left-60 lg:text-left lg:bg-[length:120px_100px] lg:p-20 lg:bg-[left_15rem_top];
-    /* m-5; */
-    /* px-9 py-8; */
-    /* left: 4rem;
-    z-index: 50;
-    width: 50%;
-    background-size: 120px 100px;
-    text-align: left;
-    background-position: 100px 0;
-    padding: 5rem 2rem; */
   }
 
   .quote {
     font-size: clamp(1.8rem, min(calc(1.8rem + 2.5vw), 3.2rem), 3.2rem);
     line-height: clamp(2.4rem, min(calc(2.4rem + 2.5vw), 4.4rem), 4.4rem);
-    @apply font-light text-quote text-center text-dark-blue;
+    @apply font-light text-quote text-center text-dark-blue max-w-[40ch];
+    /* Desktop */
     @apply lg:text-left lg:text-quote-md;
   }
 
@@ -114,16 +94,19 @@
     font-size: clamp(1.5rem, min(calc(1.5rem + 2.5vw), 2rem), 2rem);
     line-height: clamp(2rem, min(calc(2rem + 2.5vw), 3.8rem), 3.8rem);
     @apply flex flex-col text-center w-full;
+    /* Desktop */
     @apply lg:flex-row lg:text-left;
   }
 
   .name {
     @apply font-bold text-center text-dark-blue;
+    /* Desktop */
     @apply lg:pr-1;
   }
 
   .title {
     @apply font-medium text-center text-grayish-blue;
+    /* Desktop */
     @apply lg:pl-1;
   }
 }
