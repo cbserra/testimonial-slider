@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply w-full h-full;
+  }
+
+  html {
+    @apply text-base;
+    overflow: hidden;
+  }
+
+  * {
+    @apply box-border m-0 p-0;
+  }
+
+  body {
+    @apply flex flex-col items-center justify-center h-full w-full font-sans;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full h-full flex flex-col items-center justify-center text-center overflow-hidden max-w-full bg-pattern-curve bg-no-repeat bg-left-bottom bg-[length:50%];
+    /* Desktop */
+    @apply lg:bg-[length:33%];
+  }
+
+  .testimonial-container {
+    @apply relative flex items-center justify-start w-full h-full;
+    /* Slider Rules */
+    @apply overflow-x-auto snap-x snap-mandatory scroll-smooth;
+  }
+
+  .testimonial-container::-webkit-scrollbar {
+    @apply w-[10px] h-[10px];
+  }
+
+  .testimonial-container::-webkit-scrollbar-thumb {
+    @apply bg-black rounded-[10px];
+  }
+  .testimonial-container::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .testimonial {
+    @apply relative flex flex-col justify-center items-center w-full  rounded-lg;
+    /* Slider Rules */
+    @apply snap-start flex-shrink-0 scale-100 transition-transform duration-500 origin-center;
+    /* Desktop */
+    @apply lg:flex-row-reverse lg:mr-0;
+  }
+
+  .photo-container {
+    @apply relative flex flex-col items-center justify-center bg-pattern-bg bg-cover bg-no-repeat bg-top p-12;
+    @apply w-2/3 h-2/3 lg:w-1/3 lg:h-1/3;
+    @apply lg:right-0 lg:p-32;
+  }
+
+  .photo-container > img {
+    @apply relative rounded shadow-2xl m-12;
+    @apply w-full h-full;
+    /* @apply min-w-[254px] max-w-[540px]; */
+    @apply lg:w-full lg:h-full;
+    /* box-shadow: 0px 15px 20px 5px rgba(36, 36, 113, 0.2); */
+  }
+
+  .nav-container {
+    @apply relative w-[80px] h-[40px] flex items-center justify-around z-10 bottom-6;
+    @apply bg-white shadow-xl rounded-[28px];
+    /* -translate-y-20 */
+    /* background: #ffffff;
+    box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+    border-radius: 28px; */
+
+    @apply lg:absolute lg:bottom-24 lg:left-48;
+    /* @apply flex flex-col items-center justify-center m-10; */
+  }
+
+  .nav-container > span {
+    @apply p-6;
+  }
+
+  .quote-container {
+    @apply flex flex-col items-center justify-between bg-pattern-quotes bg-no-repeat bg-top p-6 gap-8;
+    background-size: 60px 50px;
+    @apply lg:absolute lg:w-[55%] lg:z-50 lg:left-16 lg:text-left lg:bg-[length:120px_100px];
+    /* m-5; */
+    /* px-9 py-8; */
+    /* left: 4rem;
+    z-index: 50;
+    width: 50%;
+    background-size: 120px 100px;
+    text-align: left;
+    background-position: 100px 0;
+    padding: 5rem 2rem; */
+  }
+
+  .quote {
+    font-size: clamp(1.8rem, min(calc(1.8rem + 2.5vw), 3.2rem), 3.2rem);
+    line-height: clamp(2.4rem, min(calc(2.4rem + 2.5vw), 4.4rem), 4.4rem);
+    @apply font-light text-quote text-center text-dark-blue;
+    @apply lg:text-left lg:text-quote-md;
+  }
+
+  .name-title {
+    font-size: clamp(1.5rem, min(calc(1.5rem + 2.5vw), 2rem), 2rem);
+    line-height: clamp(2rem, min(calc(2rem + 2.5vw), 3.8rem), 3.8rem);
+    @apply flex flex-col text-center w-full;
+    @apply lg:flex-row lg:text-left;
+  }
+
+  .name {
+    @apply font-bold text-center text-dark-blue;
+    @apply lg:pr-1;
+  }
+
+  .title {
+    @apply font-medium text-center text-grayish-blue;
+    @apply lg:pl-1;
+  }
+}
