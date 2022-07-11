@@ -22,15 +22,15 @@
   body {
     @apply flex flex-col items-center justify-center h-full w-full font-sans;
   }
-}
 
-@layer components {
-  .container {
+  main {
     @apply w-full h-full flex flex-col items-center justify-center text-center overflow-hidden max-w-full bg-pattern-curve bg-no-repeat bg-left-bottom bg-[length:50%];
     /* Desktop */
     @apply lg:bg-[length:33%];
   }
+}
 
+@layer components {
   .testimonial-container {
     @apply relative flex items-center justify-start w-full h-full;
     /* Slider Rules */
@@ -53,13 +53,13 @@
     /* Slider Rules */
     @apply snap-start flex-shrink-0 scale-100 transition-transform duration-500 origin-center;
     /* Desktop */
-    @apply lg:flex-row-reverse lg:mr-0 lg:justify-start lg:max-w-full;
+    @apply lg:flex-row-reverse lg:mr-0 lg:justify-start;
   }
 
   .photo-container {
     @apply relative flex flex-col items-center justify-center bg-pattern-bg bg-contain bg-no-repeat bg-center px-12;
     @apply w-full h-full lg:w-1/2 lg:h-1/2;
-    @apply lg:right-0 lg:p-32;
+    @apply lg:right-32 lg:p-32;
   }
 
   .photo-container > img {
@@ -89,9 +89,9 @@
   }
 
   .quote-container {
-    @apply flex flex-col items-center justify-between bg-pattern-quotes bg-no-repeat bg-top p-6 gap-8;
-    background-size: 60px 50px;
-    @apply lg:absolute lg:w-[55%] lg:z-50 lg:left-16 lg:text-left lg:bg-[length:120px_100px];
+    @apply flex flex-col items-center justify-between bg-pattern-quotes bg-no-repeat bg-top bg-[length:60px_50px] p-6 gap-8;
+    /* background-size: 60px 50px; */
+    @apply lg:absolute lg:w-[50%] lg:z-50 lg:left-60 lg:text-left lg:bg-[length:120px_100px] lg:p-20 lg:bg-[left_15rem_top];
     /* m-5; */
     /* px-9 py-8; */
     /* left: 4rem;
@@ -106,7 +106,7 @@
   .quote {
     font-size: clamp(1.8rem, min(calc(1.8rem + 2.5vw), 3.2rem), 3.2rem);
     line-height: clamp(2.4rem, min(calc(2.4rem + 2.5vw), 4.4rem), 4.4rem);
-    @apply font-light text-quote text-center text-dark-blue max-w-[50ch];
+    @apply font-light text-quote text-center text-dark-blue;
     @apply lg:text-left lg:text-quote-md;
   }
 
